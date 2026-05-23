@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive CV - Nguyễn Công Thành</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css?v=2">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ====== TRANG GIỚI THIỆU (FULL SCREEN) ====== -->
+<section class="intro-section">
+  <header class="navbar intro-nav">
+    <div class="container">
+      <a class="logo" href="#">N.C.Thành</a>
+    </div>
+  </header>
+
+  <div class="intro-content">
+    <div class="intro-text">
+      <h1>Xin chào, mình là <span class="accent">Nguyễn Công Thành</span></h1>
+      <p>UX/UI Designer & Front-End Developer</p>
+      <a href="#heroDisplay" class="scroll-btn">
+        Bắt đầu xem CV <i class="fa-solid fa-angles-down"></i>
+      </a>
+    </div>
+
+    <div class="intro-image">
+      <img src="images/avatar.jpg" alt="Ảnh Nguyễn Công Thành">
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- MAIN LAYOUT -->
+  <main class="main-grid container">
+
+    <!-- LEFT: Hero -->
+    <section class="hero" id="heroDisplay">
+      <div class="hero-card">
+        <img src="images/avatar.jpg" alt="Ảnh đại diện" class="hero-avatar">
+        <h1 class="hero-title" id="heroTitle">Nguyễn Công Thành</h1>
+        <p class="hero-sub" id="heroSubtitle"></p>
+        <div class="hero-content" id="heroContent">
+          <h3 class="content-heading">Thông tin cơ bản</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: Menu -->
+    <aside class="side-menu">
+      <nav>
+        <ul>
+          <li class="menu-item active" data-target="tpl-info">Thông tin</li>
+          <li class="menu-item" data-target="tpl-career">Mục tiêu</li>
+          <li class="menu-item" data-target="tpl-skills">Kỹ năng</li>
+          <li class="menu-item" data-target="tpl-projects">Dự án</li>
+          <li class="menu-item" data-target="tpl-contact">Liên hệ</li>
+        </ul>
+      </nav>
+    </aside>
+
+  </main>
+
+  <!-- ================== TEMPLATES ================== -->
+
+  <!-- Thông tin -->
+  <template id="tpl-info">
+    <h3 class="content-heading"></h3>
+    <div class="info-card">
+      <ul class="info-list">
+       <li><i class="fa-solid fa-user"></i> <strong>Tên:</strong> Nguyễn Công Thành</li>
+       <li><i class="fa-solid fa-calendar"></i> <strong>Ngày sinh:</strong> 09/10/2005</li>
+       <li><i class="fa-solid fa-graduation-cap"></i> <strong>Học tại:</strong> Trường ĐH Giao thông vận tải TP.HCM</li>
+       <li><i class="fa-solid fa-id-card"></i> <strong>MSSV:</strong> 087205004413</li>
+       <li><i class="fa-solid fa-laptop-code"></i> <strong>Chuyên ngành:</strong> Công Nghệ Thông Tin</li>
+      <li><i class="fa-solid fa-calendar-check"></i> <strong>Khóa học:</strong> 2023</li>
+      </ul>
+    </div>
+  </template>
+
+  <!-- Mục tiêu -->
+  <template id="tpl-career">
+    <h3 class="content-heading"></h3>
+    <div class="info-card">
+      <p>Mong muốn trở thành một UX/UI Designer chuyên nghiệp, kết hợp giữa tư duy thiết kế sáng tạo, khả năng phân tích người dùng và kỹ năng lập trình để tạo ra những sản phẩm số thân thiện, hiệu quả và mang lại trải nghiệm tối ưu cho người dùng.</p>
+    </div>
+  </template>
+
+  <!-- Kỹ năng -->
+  <template id="tpl-skills">
+    <h3 class="content-heading"></h3>
+    <div class="skills-section">
+      <div class="skill">
+        <span>HTML / CSS</span>
+        <div class="progress-bar">
+          <div class="progress htmlcss">80%</div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>lập trình web</span>
+        <div class="progress-bar">
+          <div class="progress js">80%</div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>UX/UI Design</span>
+        <div class="progress-bar">
+          <div class="progress uxui">80%</div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  
+<!-- Dự án -->
+<template id="tpl-projects">
+  <h3 class="content-heading">Dự án</h3>
+
+  <div class="info-card">
+
+    <!-- Project 1 -->
+    <div class="project-item">
+
+      <!-- Tên project -->
+      <a href="https://vietnamtravel-qndf.vercel.app/"
+         target="_blank"
+         class="project-link">
+        <h4>Vietnam Travel</h4>
+      </a>
+
+      <!-- Mô tả -->
+      <p class="project-desc">
+        Website du lịch Việt Nam với bản đồ tương tác,
+        giao diện hiện đại và responsive.
+      </p>
+
+      <!-- Nút GitHub -->
+      <div class="github-btn">
+        <a href="https://github.com/nguyencongthanh09102005-beep/vietnamtravel"
+           target="_blank">
+          Xem trên GitHub
+        </a>
+      </div>
+
+    </div>
+  </div>
+</template>
+
+  <!-- Liên hệ -->
+  <template id="tpl-contact">
+    <h3 class="content-heading">Liên hệ</h3>
+    <div class="info-card contact-section">
+      <a href="https://www.facebook.com/share/19ZkdQVgVN/?mibextid=wwXIfr" target="_blank" class="contact-link">
+        <i class="fab fa-facebook"></i>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.instagram.com/thanh6149nguyen/?igsh=MW05bHoycndwMjNwdg%3D%3D&utm_source=qr" target="_blank" class="contact-link">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+    </div>
+  </template>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Nguyễn Công Thành</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
