@@ -1,193 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Interactive CV - Nguyễn Công Thành</title>
-
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="style.css?v=2">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f9ff">
+  <meta name="description" content="Portfolio Nguyễn Công Thành — UX/UI Designer định hướng thiết kế trải nghiệm người dùng và phát triển giao diện web. Dự án AI Study Agent và Vietnam Travel.">
+  <title>Nguyễn Công Thành | UX/UI Designer · Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="script.js?v=3" defer></script>
 </head>
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprites" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m7 17 10-10M7 7h10v10"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 19h16"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M2 12h2m16 0h2M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.4 1.4-4.4-2.5-6.2-3m12.3 6v-3.9a3.4 3.4 0 0 0-.9-2.7c3-.3 6.2-1.5 6.2-6.8a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6S17.7 1 15 2.9a13 13 0 0 0-7 0C5.3 1 4.1 1.4 4.1 1.4A4.8 4.8 0 0 0 4 5a5.2 5.2 0 0 0-1.4 3.6c0 5.3 3.2 6.5 6.2 6.8a3.4 3.4 0 0 0-.9 2.7V22"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-5 3-8 8-8s8 3 8 8"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 21h16M6 17v-6h4v6m2 0V5h4v12m2 0v-9h4v9"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M2.5 7a2 2 0 0 1 2-2H10l2 2h7.5a2 2 0 0 1 2 2v10H2.5Z"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 5-6 7 6 7m8-14 6 7-6 7m-3-17-2 20"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="15" rx="2"/><path d="M8 22h8m-4-4v4"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18h1.4a2 2 0 0 0 1.6-3.2 2 2 0 0 1 1.6-3.2H18a4 4 0 0 0 4-4A9 9 0 0 0 12 3Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="11" cy="7" r="1"/><circle cx="16" cy="8" r="1"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1-4 3-10 12-12l4 4c-2 9-8 13-12 12l-4-4Zm2 2-3 3m9-7-2-2M3 10l4-4m7 14 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5c5-2 8-1 9 1v15c-1-2-4-3-9-1Zm9 1c1-2 4-3 9-1v15c-5-2-8-1-9 1"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3Zm6-3v15m6-12v15"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 4h16v13H8l-4 4V4Z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5Zm-10 10 10 5 10-5M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
 
-<!-- ====== TRANG GIỚI THIỆU (FULL SCREEN) ====== -->
-<section class="intro-section">
-  <header class="navbar intro-nav">
-    <div class="container">
-      <a class="logo" href="#">N.C.Thành</a>
+  <header class="topbar" id="top">
+    <div class="header-inner page-width">
+      <a class="brand" href="#home" aria-label="Nguyễn Công Thành — Trang chủ">
+        <span class="brand-mark"><span></span><span></span></span>
+        <span>N.C.Thành</span>
+      </a>
+      <nav class="top-nav" id="topNav" aria-label="Điều hướng chính">
+        <a class="nav-link is-active" href="#home">Trang chủ</a>
+        <a class="nav-link" href="#about">Giới thiệu</a>
+        <a class="nav-link" href="#skills">Kỹ năng</a>
+        <a class="nav-link" href="#projects">Dự án</a>
+        <a class="nav-link" href="#contact">Liên hệ</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Chuyển giao diện tối" title="Đổi giao diện"><svg class="icon moon-icon"><use href="#i-moon"/></svg><svg class="icon sun-icon"><use href="#i-sun"/></svg></button>
+        <a class="btn btn-primary header-contact" href="mailto:nguyencongthanh09102005@gmail.com"><svg class="icon"><use href="#i-arrow-up"/></svg> Liên hệ ngay</a>
+        <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="topNav"><svg class="icon"><use href="#i-menu"/></svg></button>
+      </div>
     </div>
   </header>
 
-  <div class="intro-content">
-    <div class="intro-text">
-      <h1>Xin chào, tôi là <span class="accent">Nguyễn Công Thành</span></h1>
-      <p>UX/UI Designer & Front-End Developer</p>
-      <div class="intro-buttons">
-
-   <a href="cv.pdf" download class="cv-btn">
-    <i class="fa-solid fa-download"></i>
-    Tải CV
-   </a>
-
-   <a href="#heroDisplay" class="scroll-btn">
-    Bắt đầu xem CV
-    <i class="fa-solid fa-angles-down"></i>
-   </a>
-
-</div>
-    </div>
-
-    <div class="intro-image">
-      <img src="images/avatar.jpg" alt="Ảnh Nguyễn Công Thành">
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- MAIN LAYOUT -->
-  <main class="main-grid container">
-
-    <!-- LEFT: Hero -->
-    <section class="hero" id="heroDisplay">
-      <div class="hero-card">
-        <img src="images/avatar.jpg" alt="Ảnh đại diện" class="hero-avatar">
-        <h1 class="hero-title" id="heroTitle">Nguyễn Công Thành</h1>
-        <p class="hero-sub" id="heroSubtitle"></p>
-        <div class="hero-content" id="heroContent">
-          <h3 class="content-heading">Thông tin cơ bản</h3>
+  <main>
+    <section class="hero-section page-width" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span>👋</span> Chào mừng bạn đến với portfolio của tôi!</div>
+        <h1>Xin chào, tôi là<br><span>Nguyễn Công Thành</span></h1>
+        <p class="hero-role">UX/UI Designer <span>&amp;</span> Front-End Developer</p>
+        <p class="hero-desc">Tôi thiết kế và xây dựng những sản phẩm số thân thiện, dễ sử dụng, tập trung vào trải nghiệm người dùng và giá trị thực tế.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary btn-large" href="#featured"><svg class="icon"><use href="#i-eye"/></svg> Xem Portfolio <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-outline btn-large" href="cv.pdf" download="Nguyen-Cong-Thanh-CV.pdf"><svg class="icon"><use href="#i-down"/></svg> Tải CV</a>
         </div>
+      </div>
+      <div class="hero-art reveal" aria-label="Ảnh đại diện của Nguyễn Công Thành">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="portrait-ring"><img src="images/avatar.jpg" alt="Ảnh Nguyễn Công Thành" class="portrait" fetchpriority="high"></div>
+        <div class="float-pill pill-design"><svg class="icon"><use href="#i-palette"/></svg><span>UX/UI<br><b>Design</b></span></div>
+        <div class="float-pill pill-code"><svg class="icon"><use href="#i-code"/></svg><span>Front-End<br><b>Development</b></span></div>
+        <div class="float-pill pill-ideas"><svg class="icon"><use href="#i-spark"/></svg><span>Creative<br><b>Ideas</b></span></div>
+        <div class="hero-signature">Design • Build • Improve</div>
+      </div>
+      <div class="social-strip">
+        <a href="mailto:nguyencongthanh09102005@gmail.com"><svg class="icon"><use href="#i-mail"/></svg><span>Email</span></a>
+        <a href="https://github.com/nguyencongthanh09102005-beep" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg><span>GitHub / nguyencongthanh09102005-beep</span></a>
+        <span class="location-chip"><svg class="icon"><use href="#i-map"/></svg> TP. Hồ Chí Minh, Việt Nam</span>
       </div>
     </section>
 
-    <!-- RIGHT: Menu -->
-    <aside class="side-menu">
-      <nav>
-        <ul>
-          <li class="menu-item active" data-target="tpl-info">Thông tin</li>
-          <li class="menu-item" data-target="tpl-career">Mục tiêu</li>
-          <li class="menu-item" data-target="tpl-skills">Kỹ năng</li>
-          <li class="menu-item" data-target="tpl-projects">Dự án</li>
-          <li class="menu-item" data-target="tpl-contact">Liên hệ</li>
-        </ul>
-      </nav>
-    </aside>
+    <section class="portfolio-shell page-width" id="featured" aria-labelledby="featured-title">
+      <div class="portfolio-main">
+        <div class="section-heading">
+          <div><div class="section-title-row"><span class="section-icon"><svg class="icon"><use href="#i-layers"/></svg></span><h2 id="featured-title">Portfolio nổi bật</h2></div>
+          <p>Dưới đây là những dự án tôi thực hiện, kết hợp thiết kế giao diện và phát triển sản phẩm. Mỗi dự án là cơ hội để học hỏi và giải quyết một vấn đề thực tế.</p></div>
+          <a href="#projects" class="text-link">Xem tất cả dự án <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="skill-pills" aria-label="Lĩnh vực">
+          <span><svg class="icon"><use href="#i-palette"/></svg> UX/UI Design</span>
+          <span><svg class="icon"><use href="#i-code"/></svg> HTML / CSS</span>
+          <span class="js-pill">JS <strong>JavaScript</strong></span>
+          <span><svg class="icon"><use href="#i-mobile"/></svg> Responsive Design</span>
+          <span><svg class="icon"><use href="#i-layers"/></svg> Web Application</span>
+        </div>
+        <div class="featured-grid">
+          <article class="feature-card">
+            <div class="project-visual study-art">
+              <div class="screen laptop-screen" aria-hidden="true">
+                <div class="screen-top"><span class="screen-brand">◆ StudyAgent</span><span>⌕ &nbsp; ◌ &nbsp; ●</span></div>
+                <div class="screen-body">
+                  <div class="mini-sidebar"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="mini-content"><strong>Chào mừng trở lại!</strong><span class="mini-subtitle">Hôm nay bạn muốn học gì?</span>
+                    <div class="mini-stats"><span>◉ <b>04</b></span><span>▣ <b>12</b></span><span>▦ <b>08</b></span></div>
+                    <div class="mini-panels"><div class="mini-chart"><div class="mini-wave"></div></div><div class="mini-calendar">● ● · ●<br>· ● ● ·<br>● · ● ●</div></div>
+                    <div class="mini-lines"><i></i><i></i><i></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="laptop-base"></div>
+              <div class="phone-preview study-phone" aria-hidden="true"><span class="phone-notch"></span><strong>Study Agent</strong><span class="phone-blue"></span><span class="phone-box"></span><span class="phone-box"></span><span class="phone-chart"></span></div>
+            </div>
+            <div class="feature-card-body">
+              <div class="card-title-row"><span class="card-icon"><svg class="icon"><use href="#i-spark"/></svg></span><h3>AI Study Agent</h3></div>
+              <div class="tags"><span>UX/UI Design</span><span>Web Application</span><span>AI Learning</span></div>
+              <p>Nền tảng hỗ trợ sinh viên học tập thông minh: quản lý môn học, tài liệu, quiz, kế hoạch học và chat AI.</p>
+              <div class="card-actions"><a class="btn btn-primary" href="#ai-case">Xem case study <svg class="icon"><use href="#i-arrow"/></svg></a><a class="btn btn-outline" href="#ai-case">Xem giao diện <svg class="icon"><use href="#i-eye"/></svg></a></div>
+            </div>
+          </article>
+          <article class="feature-card">
+            <div class="project-visual travel-art">
+              <div class="travel-backdrop"></div>
+              <div class="screen travel-laptop" aria-hidden="true"><div class="travel-screen-top"><span>🌏 Vietnam Travel</span><span>Khám phá &nbsp; Địa điểm &nbsp; Đăng nhập</span></div><div class="travel-screen-hero"><strong>Khám phá<br>Việt Nam tuyệt đẹp</strong><div class="travel-search">Bạn muốn đi đâu? <span>⌕</span></div></div><div class="travel-gallery"><span></span><span></span><span></span></div></div>
+              <div class="laptop-base"></div>
+              <div class="phone-preview travel-phone" aria-hidden="true"><span class="phone-notch"></span><div class="travel-mobile-photo"></div><strong>Khám phá Việt Nam</strong><span class="phone-box"></span><span class="phone-box"></span></div>
+            </div>
+            <div class="feature-card-body">
+              <div class="card-title-row"><span class="card-icon travel-icon"><svg class="icon"><use href="#i-map"/></svg></span><h3>Vietnam Travel</h3></div>
+              <div class="tags"><span>UX/UI Design</span><span>HTML / CSS</span><span>JavaScript</span></div>
+              <p>Website khám phá du lịch Việt Nam với giao diện trực quan, khả năng hiển thị trên nhiều thiết bị và bản đồ tương tác.</p>
+              <div class="card-actions"><a class="btn btn-primary" href="#travel-case">Xem dự án <svg class="icon"><use href="#i-arrow"/></svg></a><a class="btn btn-outline" href="https://vietnamtravel-qndf.vercel.app/" target="_blank" rel="noopener noreferrer">Demo <svg class="icon"><use href="#i-arrow-up"/></svg></a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <aside class="portfolio-aside" aria-label="Danh mục portfolio">
+        <div class="aside-card">
+          <h3><svg class="icon"><use href="#i-grid"/></svg> Danh mục</h3>
+          <nav class="side-nav" aria-label="Danh mục nhanh">
+            <a href="#about"><span class="side-symbol"><svg class="icon"><use href="#i-user"/></svg></span><span><strong>Thông tin</strong><small>Giới thiệu bản thân</small></span></a>
+            <a href="#goals"><span class="side-symbol"><svg class="icon"><use href="#i-target"/></svg></span><span><strong>Mục tiêu</strong><small>Định hướng nghề nghiệp</small></span></a>
+            <a href="#skills"><span class="side-symbol"><svg class="icon"><use href="#i-chart"/></svg></span><span><strong>Kỹ năng</strong><small>Các kỹ năng chuyên môn</small></span></a>
+            <a href="#projects" class="selected"><span class="side-symbol"><svg class="icon"><use href="#i-folder"/></svg></span><span><strong>Dự án</strong><small>Portfolio nổi bật</small></span></a>
+            <a href="#contact"><span class="side-symbol"><svg class="icon"><use href="#i-mail"/></svg></span><span><strong>Liên hệ</strong><small>Thông tin liên hệ</small></span></a>
+          </nav>
+        </div>
+        <div class="aside-card availability"><div class="availability-title"><span class="status-dot"></span><strong>Sẵn sàng hợp tác</strong></div><p>Tôi luôn cởi mở với những cơ hội học tập và làm việc mới. Hãy liên hệ nếu có cơ hội phù hợp nhé!</p><a href="mailto:nguyencongthanh09102005@gmail.com" class="btn btn-soft">↗ &nbsp; Liên hệ ngay <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+      </aside>
+    </section>
 
+    <section class="projects-section page-width" id="projects">
+      <div class="projects-heading">
+        <div class="eyebrow">✨ Những sản phẩm tôi đã thực hiện</div>
+        <h2>Dự án nổi bật <span>&amp; Case Study</span></h2>
+        <p>Khám phá những dự án đã thiết kế và phát triển, cùng bài toán, giải pháp và quá trình triển khai.</p>
+        <div class="project-filters" role="group" aria-label="Lọc dự án"><button class="filter-btn selected" type="button" data-filter="all" aria-pressed="true"><svg class="icon"><use href="#i-grid"/></svg> Tất cả</button><button class="filter-btn" type="button" data-filter="ux" aria-pressed="false"><svg class="icon"><use href="#i-palette"/></svg> UX/UI</button><button class="filter-btn" type="button" data-filter="web" aria-pressed="false"><svg class="icon"><use href="#i-monitor"/></svg> Web App</button><button class="filter-btn" type="button" data-filter="frontend" aria-pressed="false"><svg class="icon"><use href="#i-code"/></svg> Frontend</button></div>
+      </div>
+      <div class="projects-layout">
+        <div class="case-list" id="caseList">
+          <article class="case-card" id="ai-case" data-categories="ux web frontend">
+            <div class="case-visual">
+              <div class="project-visual study-art case-hero-art"><div class="screen laptop-screen"><div class="screen-top"><span class="screen-brand">◆ StudyAgent</span><span>⌕ &nbsp; ◌ &nbsp; ●</span></div><div class="screen-body"><div class="mini-sidebar"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="mini-content"><strong>Chào mừng trở lại!</strong><span class="mini-subtitle">Hôm nay bạn muốn học gì?</span><div class="mini-stats"><span>◉ <b>04</b></span><span>▣ <b>12</b></span><span>▦ <b>08</b></span></div><div class="mini-panels"><div class="mini-chart"><div class="mini-wave"></div></div><div class="mini-calendar">● ● · ●<br>· ● ● ·<br>● · ● ●</div></div><div class="mini-lines"><i></i><i></i><i></i></div></div></div></div><div class="laptop-base"></div><div class="phone-preview study-phone"><span class="phone-notch"></span><strong>Study Agent</strong><span class="phone-blue"></span><span class="phone-box"></span><span class="phone-box"></span><span class="phone-chart"></span></div></div>
+              <div class="thumbnail-row"><div class="mini-shot shot-dashboard"><svg class="icon"><use href="#i-chart"/></svg><span>Dashboard</span></div><div class="mini-shot shot-study"><svg class="icon"><use href="#i-book"/></svg><span>Quản lý môn học</span></div><div class="mini-shot shot-chat"><svg class="icon"><use href="#i-message"/></svg><span>Chat AI</span></div></div>
+            </div>
+            <div class="case-body"><h3>AI Study Agent</h3><div class="tags"><span>UX/UI Design</span><span>Web Application</span><span>Đồ án cá nhân</span></div><p>Nền tảng hỗ trợ sinh viên học tập với tính năng quản lý môn học, tài liệu, quiz, kế hoạch học và trợ lý AI theo định hướng cá nhân hóa.</p>
+              <div class="case-facts"><div><h4><svg class="icon"><use href="#i-target"/></svg> Bài toán</h4><p>Thông tin môn học, tài liệu và lịch ôn tập có thể phân tán, khó theo dõi.</p></div><div><h4><svg class="icon"><use href="#i-spark"/></svg> Giải pháp</h4><p>Tập trung các hoạt động học vào một không gian thống nhất, dễ truy cập.</p></div><div><h4><svg class="icon"><use href="#i-code"/></svg> Công nghệ</h4><p>Flask, Jinja, HTML/CSS, JavaScript, Chart.js.</p></div><div><h4><svg class="icon"><use href="#i-user"/></svg> Vai trò</h4><p>Thiết kế giao diện và phát triển ứng dụng trong đồ án cá nhân.</p></div></div>
+              <div class="case-footer"><a href="#about" class="btn btn-primary">Tìm hiểu về tôi <svg class="icon"><use href="#i-arrow"/></svg></a><span class="work-note">Ảnh thiết bị là hình minh họa giao diện</span></div>
+            </div>
+          </article>
+          <article class="case-card" id="travel-case" data-categories="ux frontend">
+            <div class="case-visual"><div class="project-visual travel-art case-hero-art"><div class="travel-backdrop"></div><div class="screen travel-laptop"><div class="travel-screen-top"><span>🌏 Vietnam Travel</span><span>Khám phá &nbsp; Địa điểm</span></div><div class="travel-screen-hero"><strong>Khám phá<br>Việt Nam tuyệt đẹp</strong><div class="travel-search">Bạn muốn đi đâu? <span>⌕</span></div></div><div class="travel-gallery"><span></span><span></span><span></span></div></div><div class="laptop-base"></div><div class="phone-preview travel-phone"><span class="phone-notch"></span><div class="travel-mobile-photo"></div><strong>Khám phá Việt Nam</strong><span class="phone-box"></span><span class="phone-box"></span></div></div>
+              <div class="thumbnail-row"><div class="mini-shot travel-shot"><svg class="icon"><use href="#i-map"/></svg><span>Khám phá địa điểm</span></div><div class="mini-shot travel-shot"><svg class="icon"><use href="#i-grid"/></svg><span>Danh sách điểm đến</span></div><div class="mini-shot travel-shot"><svg class="icon"><use href="#i-mobile"/></svg><span>Responsive</span></div></div>
+            </div>
+            <div class="case-body"><h3>Vietnam Travel</h3><div class="tags"><span>UX/UI Design</span><span>HTML / CSS</span><span>JavaScript</span></div><p>Website khám phá du lịch Việt Nam với giao diện hiện đại, responsive và trải nghiệm khám phá địa điểm, bản đồ tương tác.</p>
+              <div class="case-facts"><div><h4><svg class="icon"><use href="#i-target"/></svg> Mục tiêu</h4><p>Giúp người dùng tìm hiểu các địa điểm du lịch Việt Nam thuận tiện hơn.</p></div><div><h4><svg class="icon"><use href="#i-spark"/></svg> Điểm nổi bật</h4><p>Trang khám phá địa điểm kết hợp giao diện trực quan và bản đồ tương tác.</p></div><div><h4><svg class="icon"><use href="#i-mobile"/></svg> Thiết bị</h4><p>Bố cục thích ứng trên nhiều kích thước màn hình.</p></div><div><h4><svg class="icon"><use href="#i-code"/></svg> Vai trò</h4><p>Thiết kế và phát triển giao diện website.</p></div></div>
+              <div class="case-footer"><a href="https://vietnamtravel-qndf.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Xem website <svg class="icon"><use href="#i-arrow-up"/></svg></a><a href="https://github.com/nguyencongthanh09102005-beep/vietnamtravel" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><svg class="icon"><use href="#i-github"/></svg> GitHub</a></div>
+            </div>
+          </article>
+          <div class="filter-empty" id="filterEmpty" hidden>Không có dự án phù hợp với bộ lọc này.</div>
+        </div>
+        <aside class="projects-aside"><div class="aside-card"><h3><svg class="icon"><use href="#i-grid"/></svg> Danh mục</h3><nav class="side-nav" aria-label="Điều hướng dự án"><a href="#about"><span class="side-symbol"><svg class="icon"><use href="#i-user"/></svg></span><span><strong>Thông tin</strong><small>Giới thiệu bản thân</small></span></a><a href="#goals"><span class="side-symbol"><svg class="icon"><use href="#i-target"/></svg></span><span><strong>Mục tiêu</strong><small>Định hướng nghề nghiệp</small></span></a><a href="#skills"><span class="side-symbol"><svg class="icon"><use href="#i-chart"/></svg></span><span><strong>Kỹ năng</strong><small>Các kỹ năng chuyên môn</small></span></a><a href="#projects" class="selected"><span class="side-symbol"><svg class="icon"><use href="#i-folder"/></svg></span><span><strong>Dự án</strong><small>Portfolio nổi bật</small></span></a><a href="#contact"><span class="side-symbol"><svg class="icon"><use href="#i-mail"/></svg></span><span><strong>Liên hệ</strong><small>Thông tin liên hệ</small></span></a></nav></div><div class="aside-card"><h3><svg class="icon"><use href="#i-check"/></svg> Case Study</h3><ul class="check-list"><li>Bối cảnh &amp; mục tiêu</li><li>Vấn đề cần giải quyết</li><li>Giải pháp đã triển khai</li><li>Giao diện &amp; công nghệ</li><li>Bài học trong dự án</li></ul></div><div class="aside-card availability"><div class="availability-title"><span class="status-dot"></span><strong>Cùng hợp tác nhé!</strong></div><p>Tôi muốn học hỏi và tạo ra những sản phẩm hữu ích, dễ sử dụng.</p><a class="btn btn-soft" href="mailto:nguyencongthanh09102005@gmail.com">Liên hệ ngay <svg class="icon"><use href="#i-arrow"/></svg></a></div></aside>
+      </div>
+    </section>
+
+    <section class="about-section page-width" id="about"><div class="eyebrow">Vài điều về tôi</div><div class="about-grid"><div><h2>Thiết kế trải nghiệm,<br><span>không chỉ là giao diện.</span></h2><p>Tôi là sinh viên ngành Công nghệ thông tin tại Trường Đại học Giao thông vận tải TP.HCM, định hướng UX/UI Design. Tôi quan tâm đến cách người dùng tương tác với sản phẩm và cách biến các yêu cầu thành giao diện dễ hiểu, nhất quán.</p><p>Từ các dự án cá nhân, tôi thực hành xây dựng cấu trúc màn hình, lập trình giao diện, thử nghiệm và cải thiện sản phẩm sau khi sử dụng.</p></div><div class="about-metrics"><div><svg class="icon"><use href="#i-book"/></svg><strong>Công nghệ thông tin</strong><span>Đại học Giao thông vận tải TP.HCM</span></div><div id="goals"><svg class="icon"><use href="#i-target"/></svg><strong>Mục tiêu nghề nghiệp</strong><span>UX/UI Designer — học hỏi qua các sản phẩm thực tế</span></div><div><svg class="icon"><use href="#i-rocket"/></svg><strong>Định hướng</strong><span>Thiết kế giao diện, trải nghiệm người dùng &amp; frontend</span></div></div></div></section>
+    <section class="skills-section page-width" id="skills"><div class="section-title-row"><span class="section-icon"><svg class="icon"><use href="#i-chart"/></svg></span><h2>Kỹ năng &amp; công cụ</h2></div><p class="section-intro">Những kỹ năng tôi đang học và ứng dụng trong các dự án. Không dùng thanh % chủ quan; ưu tiên minh chứng từ sản phẩm.</p><div class="skills-grid"><article><svg class="icon"><use href="#i-palette"/></svg><h3>UX/UI Design</h3><p>Thiết kế bố cục, hệ thống thành phần giao diện, responsive, cải thiện trải nghiệm.</p></article><article><svg class="icon"><use href="#i-code"/></svg><h3>Frontend</h3><p>HTML, CSS, JavaScript; xây dựng màn hình và tương tác cho website.</p></article><article><svg class="icon"><use href="#i-layers"/></svg><h3>Web Applications</h3><p>Làm việc với Flask, Jinja và Chart.js trong AI Study Agent.</p></article></div></section>
+    <section class="contact-section page-width" id="contact"><div class="contact-glow"></div><div class="eyebrow">Cùng tạo ra điều thú vị</div><h2>Bạn đang có một <span>ý tưởng?</span></h2><p>Tôi sẵn sàng trao đổi về cơ hội thực tập, thiết kế UX/UI và những dự án sản phẩm số.</p><div class="contact-buttons"><a class="btn btn-white btn-large" href="mailto:nguyencongthanh09102005@gmail.com"><svg class="icon"><use href="#i-mail"/></svg> Gửi email cho tôi <svg class="icon"><use href="#i-arrow-up"/></svg></a><a class="btn btn-glass btn-large" href="https://github.com/nguyencongthanh09102005-beep" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> GitHub</a></div></section>
   </main>
-
-  <!-- ================== TEMPLATES ================== -->
-
-  <!-- Thông tin -->
-  <template id="tpl-info">
-    <h3 class="content-heading"></h3>
-    <div class="info-card">
-      <ul class="info-list">
-       <li><i class="fa-solid fa-user"></i> <strong>Tên:</strong> Nguyễn Công Thành</li>
-       <li><i class="fa-solid fa-calendar"></i> <strong>Ngày sinh:</strong> 09/10/2005</li>
-       <li><i class="fa-solid fa-graduation-cap"></i> <strong>Học tại:</strong> Trường ĐH Giao thông vận tải TP.HCM</li>
-       <li><i class="fa-solid fa-id-card"></i> <strong>MSSV:</strong> 087205004413</li>
-       <li><i class="fa-solid fa-laptop-code"></i> <strong>Chuyên ngành:</strong> Công Nghệ Thông Tin</li>
-      <li><i class="fa-solid fa-calendar-check"></i> <strong>Khóa học:</strong> 2023</li>
-      </ul>
-    </div>
-  </template>
-
-  <!-- Mục tiêu -->
-  <template id="tpl-career">
-    <h3 class="content-heading"></h3>
-    <div class="info-card">
-      <p>Mong muốn trở thành một UX/UI Designer chuyên nghiệp, kết hợp giữa tư duy thiết kế sáng tạo, khả năng phân tích người dùng và kỹ năng lập trình để tạo ra những sản phẩm số thân thiện, hiệu quả và mang lại trải nghiệm tối ưu cho người dùng.</p>
-    </div>
-  </template>
-
-  <!-- Kỹ năng -->
-  <template id="tpl-skills">
-    <h3 class="content-heading"></h3>
-    <div class="skills-section">
-      <div class="skill">
-        <span>HTML / CSS</span>
-        <div class="progress-bar">
-          <div class="progress htmlcss">80%</div>
-        </div>
-      </div>
-      <div class="skill">
-        <span>lập trình web</span>
-        <div class="progress-bar">
-          <div class="progress js">80%</div>
-        </div>
-      </div>
-      <div class="skill">
-        <span>UX/UI Design</span>
-        <div class="progress-bar">
-          <div class="progress uxui">80%</div>
-        </div>
-      </div>
-    </div>
-  </template>
-
-  
-<!-- Dự án -->
-<template id="tpl-projects">
-  <h3 class="content-heading">Dự án</h3>
-
-  <div class="info-card">
-
-    <!-- Project 1 -->
-    <div class="project-item">
-
-      <!-- Tên project -->
-      <a href="https://vietnamtravel-qndf.vercel.app/"
-         target="_blank"
-         class="project-link">
-        <h4>Vietnam Travel</h4>
-      </a>
-
-      <!-- Mô tả -->
-      <p class="project-desc">
-        Website du lịch Việt Nam với bản đồ tương tác,
-        giao diện hiện đại và responsive.
-      </p>
-
-      <!-- Nút GitHub -->
-      <div class="github-btn">
-        <a href="https://github.com/nguyencongthanh09102005-beep/vietnamtravel"
-           target="_blank">
-          Xem trên GitHub
-        </a>
-      </div>
-
-    </div>
-  </div>
-</template>
-
-  <!-- Liên hệ -->
-<template id="tpl-contact">
-  <h3 class="content-heading">Liên hệ</h3>
-
-  <div class="info-card contact-section">
-
-    <a
-      class="contact-link"
-    >
-      <i class="fas fa-envelope"></i>
-      <span>nguyencongthanh09102005@gmail.com</span>
-    </a>
-
-  </div>
-</template>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Nguyễn Công Thành</p>
-    </div>
-  </footer>
-
-  <!-- SCRIPT -->
-  <script src="script.js"></script>
+  <footer class="site-footer page-width"><span>© <span id="copyrightYear">2026</span> Nguyễn Công Thành. Made with care.</span><a href="#top">Lên đầu trang ↑</a></footer>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Lên đầu trang">↑</button>
 </body>
 </html>
