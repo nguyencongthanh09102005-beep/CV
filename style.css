@@ -39,3 +39,33 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button,a{
 @media (max-width:700px){.page-width{padding-left:18px;padding-right:18px}.topbar{height:64px}.top-nav{top:64px}.brand{font-size:17px}.brand-mark{transform:rotate(-42deg) scale(.8);margin-right:-4px}.header-actions{gap:8px}.header-contact{display:none}.hero-section{display:flex;flex-direction:column;align-items:stretch;padding-top:26px;min-height:0;gap:6px}.hero-copy{text-align:center;padding:0;order:1}.eyebrow{font-size:10px;padding:7px 10px}.hero-copy h1{font-size:clamp(30px,7.5vw,43px);letter-spacing:-1.55px;margin:13px 0 9px}.hero-role{font-size:18px;letter-spacing:-.6px}.hero-desc{font-size:12px;line-height:1.85;margin:9px auto 18px;max-width:560px}.hero-buttons{justify-content:center;gap:9px}.hero-buttons .btn{font-size:12px;padding:11px 14px}.hero-art{order:0;height:280px;width:100%}.portrait-ring{width:240px;height:240px}.hero-art::before{width:290px;height:290px}.pill-design{left:2%;top:13%}.pill-code{left:1%;bottom:8%}.pill-ideas{right:0;top:48%}.social-strip{order:2;padding:20px 0 15px;justify-content:center;gap:12px 20px;margin:0;font-size:10px}.social-strip a:nth-child(2) span{max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.portfolio-shell{padding-top:14px;padding-bottom:35px}.portfolio-main{padding:17px 13px}.section-title-row h2{font-size:22px}.section-icon{width:37px;height:37px}.section-heading{flex-direction:column;gap:0}.section-heading p{font-size:12px}.text-link{padding-top:2px}.skill-pills{gap:6px}.skill-pills>span{font-size:10px;padding:6px 9px}.featured-grid{grid-template-columns:1fr;gap:12px}.project-visual{height:265px}.feature-card-body{padding-inline:7px}.feature-card p{min-height:unset}.portfolio-aside{grid-template-columns:1fr}.portfolio-aside .aside-card:first-child .side-nav{grid-template-columns:1fr 1fr}.portfolio-aside .availability{display:none}.projects-section{padding-top:45px;padding-bottom:45px}.projects-heading h2{font-size:34px}.projects-heading p{font-size:12px}.filter-btn{padding:9px 11px;font-size:11px;min-height:36px}.case-card{grid-template-columns:1fr;gap:16px;padding:11px}.case-hero-art{height:280px}.case-body{padding:4px 5px 8px}.case-body h3{font-size:24px}.case-body>p{font-size:12px}.case-facts p{font-size:10px}.about-section{padding-top:44px;padding-bottom:32px}.about-grid{grid-template-columns:1fr;gap:16px}.about-grid h2{font-size:30px}.about-grid p{font-size:12px}.skills-section{padding-bottom:55px}.skills-grid{grid-template-columns:1fr;gap:10px}.skills-grid article{padding:18px}.contact-section{border-radius:17px;padding-top:40px;padding-bottom:42px}.site-footer{min-height:90px;flex-direction:column;justify-content:center;gap:6px;text-align:center}.contact-section p{font-size:12px}.back-to-top{right:15px;bottom:15px}}
 @media (max-width:390px){.page-width{padding-inline:13px}.hero-art{height:245px}.portrait-ring{width:212px;height:212px}.float-pill{font-size:8px;padding:6px;gap:5px}.float-pill .icon{width:18px;height:18px}.hero-copy h1{font-size:28px}.hero-role{font-size:16px}.project-visual{height:218px}.case-hero-art{height:225px}.case-facts{grid-template-columns:1fr}.portfolio-aside .aside-card:first-child .side-nav{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* Section order: Home → About → Goals → Skills → Projects → Contact */
+.about-section{padding-top:74px;padding-bottom:45px;scroll-margin-top:85px}
+.goals-section{padding-top:15px;padding-bottom:60px;scroll-margin-top:85px}
+.goals-panel{background:linear-gradient(115deg,var(--card),var(--bg-accent));border:1px solid var(--line);border-radius:24px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:40px;box-shadow:var(--shadow)}
+.goals-copy h2{font-size:clamp(27px,3vw,43px);letter-spacing:-1.6px;line-height:1.26;margin:15px 0}
+.goals-copy h2 span{color:var(--blue)}
+.goals-copy>p{font-size:13px;line-height:2;color:var(--muted);margin-bottom:24px}
+.goals-cards{display:grid;gap:11px}
+.goals-cards article{display:flex;gap:13px;align-items:flex-start;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:13px}
+.goal-symbol{width:41px;height:41px;display:grid;place-items:center;border-radius:12px;color:var(--blue);background:var(--blue-soft);flex:none}
+.goal-symbol .icon{width:22px;height:22px}
+.goals-cards h3{font-size:13px;margin:1px 0 4px}
+.goals-cards p{font-size:11px;color:var(--muted);line-height:1.8;margin:0}
+.skills-section{padding-top:32px;padding-bottom:55px;scroll-margin-top:85px}
+.skills-eyebrow{margin-bottom:16px}
+.portfolio-shell{padding-top:25px;padding-bottom:12px;scroll-margin-top:95px}
+.projects-section{padding-top:45px;scroll-margin-top:85px}
+@media(max-width:990px){.goals-panel{gap:23px;padding:24px}.goals-cards article{padding:13px}}
+@media(max-width:700px){
+ .about-section{padding-top:44px;padding-bottom:20px}
+ .goals-section{padding-top:16px;padding-bottom:30px}
+ .goals-panel{grid-template-columns:1fr;gap:23px;padding:20px;border-radius:18px}
+ .goals-copy h2{font-size:29px}
+ .goals-copy>p{font-size:12px;margin-bottom:18px}
+ .skills-section{padding-top:30px;padding-bottom:38px}
+ .portfolio-shell{padding-top:18px}
+ .projects-section{padding-top:38px}
+}
