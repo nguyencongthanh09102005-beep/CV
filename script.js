@@ -1,145 +1,128 @@
-// Robust Interactive CV script - replacement
-// (Paste this whole file into script.js, save, then reload the page)
-
-(function(){
+/* Interactive portfolio — lightweight, accessible and framework-free */
+(() => {
   'use strict';
 
-  // tiny helper để log một cách có tag
-  const dbg = (...args) => console.log('[CV Debug]', ...args);
+  const $ = (selector, context = document) => context.querySelector(selector);
+  const $$ = (selector, context = document) => [...context.querySelectorAll(selector)];
 
-  // chạy khi DOM sẵn sàng
-  document.addEventListener('DOMContentLoaded', () => {
-    try {
-      dbg('DOM ready - init');
+  const themeButton = $('#themeToggle');
+  const menuButton = $('#menuToggle');
+  const topNav = $('#topNav');
+  const backButton = $('#backToTop');
+  const year = $('#copyrightYear');
+  const filters = $$('.filter-btn');
+  const cards = $$('.case-card[data-categories]');
+  const emptyState = $('#filterEmpty');
+  const navLinks = $$('.top-nav .nav-link');
 
-      const menuItems = Array.from(document.querySelectorAll('.menu-item'));
-      const heroTitle = document.getElementById('heroTitle');
-      const heroSubtitle = document.getElementById('heroSubtitle');
-      const heroContent = document.getElementById('heroContent');
+  if (year) year.textContent = String(new Date().getFullYear());
 
-      if (!heroContent) {
-        dbg('Lỗi: Không tìm thấy #heroContent trong DOM');
-        return;
-      }
-
-      // helper: prób tìm template theo các kiểu id khác nhau
-      function findTemplateByKey(key) {
-        // 1. try exact key (e.g. 'tpl-hobbies' if key is 'tpl-hobbies')
-        let t = document.getElementById(key);
-        if (t && t.content) return t;
-        // 2. try prefix 'tpl-' + key (menu data-target might be 'hobbies')
-        t = document.getElementById('tpl-' + key);
-        if (t && t.content) return t;
-        // 3. try suffix removal (if key was tpl-info and template is info)
-        if (key.startsWith('tpl-')) {
-          const short = key.slice(4);
-          t = document.getElementById(short);
-          if (t && t.content) return t;
-        }
-        // not found
-        return null;
-      }
-
-      // build map of available templates (for debug)
-      const availableTplIds = Array.from(document.querySelectorAll('template[id]')).map(t => t.id);
-      dbg('Available templates:', availableTplIds);
-
-      // state
-      let current = null;
-
-      // setContent: nhận key = data-target từ menu-item
-      function setContent(key) {
-        try {
-          dbg('setContent ->', key);
-          const tplEl = findTemplateByKey(key);
-          if (!tplEl) {
-            // show friendly message and log
-            dbg('Template not found for key:', key);
-            heroContent.innerHTML = `<div class="info-card"><p style="color:var(--text)">Không tìm thấy nội dung cho <strong>${key}</strong>. Kiểm tra id của <code>&lt;template&gt;</code> (ví dụ: id="tpl-${key}" hoặc id="${key}").</p></div>`;
-            // update active menu UI anyway
-            menuItems.forEach(mi => mi.classList.toggle('active', mi.dataset.target === key));
-            // update title minimal
-            if (heroTitle) heroTitle.textContent = key;
-            return;
-          }
-
-          // update active menu UI
-          menuItems.forEach(mi => mi.classList.toggle('active', mi.dataset.target === key));
-
-          // fade out/in classes (safe toggle)
-          heroContent.classList.add('fade-out');
-          heroContent.classList.remove('fade-in');
-
-          setTimeout(() => {
-            // clear + clone content
-            heroContent.innerHTML = '';
-            const clone = tplEl.content.cloneNode(true);
-            heroContent.appendChild(clone);
-
-            // small title handling (if you want specific titles for keys)
-            if (heroTitle) {
-              // prefer nice mapping if template id uses tpl- prefix
-              const nice = {
-             'tpl-info': 'Thông tin',
-              'tpl-career': 'Mục tiêu',
-              'tpl-skills': 'Kỹ năng',
-             'tpl-hobbies': 'Sở thích',
-             'tpl-projects': 'Dự án',
-              'tpl-contact': 'Liên hệ'
-            };
-
-              heroTitle.textContent = nice[key] || (nice['tpl-'+key] || heroTitle.textContent);
-            }
-
-            // animate any .progress inside the newly injected content
-            heroContent.querySelectorAll('.progress').forEach(el => {
-              try {
-                const pct = (el.dataset.percent || el.textContent || '').toString().replace('%','').trim();
-                el.style.width = '0';
-                if (pct && !isNaN(Number(pct))) {
-                  setTimeout(() => { el.style.width = pct + '%'; }, 150);
-                }
-              } catch (e) { /* ignore */ }
-            });
-
-            // finish fade-in
-            heroContent.classList.remove('fade-out');
-            heroContent.classList.add('fade-in');
-
-          }, 200);
-
-        } catch (err) {
-          console.error('[CV Error] setContent error:', err);
-        }
-      }
-
-      // bind click handlers for existing menu items
-      if (menuItems.length === 0) {
-        dbg('Không tìm thấy .menu-item nào trên trang');
-      } else {
-        menuItems.forEach(mi => {
-          mi.addEventListener('click', (ev) => {
-            ev.preventDefault();
-            const key = (mi.dataset.target || '').trim();
-            if (!key) {
-              dbg('menu-item missing data-target attribute', mi);
-              return;
-            }
-            if (key === current) return;
-            current = key;
-            setContent(key);
-          });
-        });
-      }
-
-      // initial render: try to open active menu item or fallback to first menu-item
-      const active = menuItems.find(m => m.classList.contains('active'));
-      const startKey = (active && active.dataset.target) ? active.dataset.target : (menuItems[0] && menuItems[0].dataset.target) || 'tpl-info';
-      current = startKey;
-      setContent(startKey);
-
-    } catch (outerErr) {
-      console.error('[CV Fatal] init error:', outerErr);
+  function setTheme(theme) {
+    const dark = theme === 'dark';
+    document.body.classList.toggle('dark', dark);
+    document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+    if (themeButton) {
+      themeButton.setAttribute('aria-label', dark ? 'Chuyển giao diện sáng' : 'Chuyển giao diện tối');
+      themeButton.setAttribute('title', dark ? 'Giao diện sáng' : 'Giao diện tối');
     }
+    try { localStorage.setItem('portfolio-theme', theme); } catch (_) { /* storage unavailable */ }
+  }
+
+  let preferredTheme = 'light';
+  try {
+    const saved = localStorage.getItem('portfolio-theme');
+    if (saved === 'dark' || saved === 'light') preferredTheme = saved;
+  } catch (_) { /* file:// or storage disabled */ }
+  setTheme(preferredTheme);
+
+  if (themeButton) {
+    themeButton.addEventListener('click', () => {
+      setTheme(document.body.classList.contains('dark') ? 'light' : 'dark');
+    });
+  }
+
+  function closeMenu() {
+    if (!topNav || !menuButton) return;
+    topNav.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Mở menu');
+  }
+
+  if (menuButton && topNav) {
+    menuButton.addEventListener('click', () => {
+      const willOpen = !topNav.classList.contains('open');
+      topNav.classList.toggle('open', willOpen);
+      menuButton.setAttribute('aria-expanded', String(willOpen));
+      menuButton.setAttribute('aria-label', willOpen ? 'Đóng menu' : 'Mở menu');
+    });
+
+    $$('.top-nav a, .side-nav a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+    document.addEventListener('click', event => {
+      if (!topNav.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 990) closeMenu();
+    }, {passive:true});
+  }
+
+  filters.forEach(button => {
+    button.addEventListener('click', () => {
+      const value = button.dataset.filter || 'all';
+      filters.forEach(other => {
+        const selected = other === button;
+        other.classList.toggle('selected', selected);
+        other.setAttribute('aria-pressed', String(selected));
+      });
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const categories = (card.dataset.categories || '').split(/\s+/);
+        const show = value === 'all' || categories.includes(value);
+        card.hidden = !show;
+        if (show) visibleCount++;
+      });
+      if (emptyState) emptyState.hidden = visibleCount > 0;
+    });
+  });
+
+  function updateBackButton() {
+    if (backButton) backButton.classList.toggle('visible', window.scrollY > 520);
+  }
+  window.addEventListener('scroll', updateBackButton, {passive:true});
+  updateBackButton();
+  if (backButton) backButton.addEventListener('click', () => {
+    window.scrollTo({top:0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+  });
+
+  const sections = ['home', 'about', 'skills', 'projects', 'contact']
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const observer = new IntersectionObserver(entries => {
+      const candidates = entries.filter(e => e.isIntersecting);
+      if (!candidates.length) return;
+      candidates.sort((a,b) => b.intersectionRatio - a.intersectionRatio);
+      const sectionId = candidates[0].target.id;
+      navLinks.forEach(link => {
+        const active = link.getAttribute('href') === '#' + sectionId;
+        link.classList.toggle('is-active', active);
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }, {rootMargin:'-22% 0px -55% 0px', threshold:[0,.2,.5,1]});
+    sections.forEach(section => observer.observe(section));
+  }
+
+  // Internal project links always reveal their card, including after filtering.
+  $$('a[href="#ai-case"], a[href="#travel-case"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const target = $(link.getAttribute('href'));
+      if (!target || !target.hidden) return;
+      const all = filters.find(button => button.dataset.filter === 'all');
+      if (all) all.click();
+    });
   });
 })();
