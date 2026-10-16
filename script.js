@@ -96,7 +96,7 @@
     window.scrollTo({top:0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
   });
 
-  const sections = ['home', 'about', 'skills', 'projects', 'contact']
+  const sections = ['home', 'about', 'goals', 'skills', 'projects', 'contact']
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
