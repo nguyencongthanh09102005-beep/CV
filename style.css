@@ -169,3 +169,25 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button,a{
   .skills-footnote{flex-wrap:wrap;padding:15px;gap:9px}
   .skills-footnote>a {width:100%;justify-content:flex-end}
 }
+
+/* AI-Assisted Workflow — supporting skill shown as a full-width seventh card */
+.skills-grid .skill-card--ai {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(22px, 4vw, 65px);
+  min-height: 0;
+  padding: 25px 29px;
+  background: linear-gradient(110deg, var(--card), var(--bg-accent));
+}
+.skills-grid .skill-card--ai .skill-top {justify-content: flex-start;gap:16px;margin-bottom:12px}
+.skills-grid .skill-card--ai h3 {font-size:18px;margin-bottom:8px}
+.skills-grid .skill-card--ai p {margin:0;flex:initial}
+.skill-ai-main, .skill-ai-side {min-width:0}
+.skill-ai-side {display:flex;flex-direction:column;justify-content:center;gap:16px}
+.skill-ai-side .skill-tag-row {margin:0}
+.skill-ai-side .skill-evidence {padding-top:14px}
+@media (max-width:700px) {
+  .skills-grid .skill-card--ai {grid-template-columns:minmax(0,1fr);gap:16px;padding:19px 17px}
+}
